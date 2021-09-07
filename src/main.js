@@ -7,6 +7,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './styles/scss/main.scss'
 import Main from '@/components/Main'
 
+export const eventBus = new Vue()
+
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
 

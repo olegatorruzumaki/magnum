@@ -1,9 +1,14 @@
 <template>
   <div class="promo col-12">
-    Main Page
     <Hat></Hat>
-    <Filters></Filters>
-    <Products class="row"></Products>
+    <div class="row">
+      <div class="col-3">
+        <Filters></Filters>
+      </div>
+      <div class="col-9">
+        <Products class="row"></Products>
+      </div>
+    </div>
   </div>
 </template>
 

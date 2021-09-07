@@ -17,8 +17,8 @@
       <hr class="hr">
     </div>
     <div class="row">
-      <div class="products__item col-3" :key="product.id" v-for="product in products">
-        <div class="products__type">{{ product.type }}</div>
+      <div class="products__item col-3" :key="product.id" v-for="product in filteredProducts">
+        <div class="products__type">{{ product.discountName }}</div>
         <div class="products__img mb-4">
           <div class="products__discount">-{{ product.discount }}%</div>
           <img class="mh-100" :src="product.img" alt="#">
@@ -38,6 +38,8 @@
 </template>
 
 <script>
+import {eventBus} from "@/main";
+
 export default {
   name: 'Products',
   props: {},
@@ -47,7 +49,10 @@ export default {
       products: [
         {
           id: 0,
-          type: "Скидки на каждой полке",
+          discountName: "Скидки на каждой полке",
+          discountType: "every",
+          productType: "animals",
+          shopType: "express",
           name: "Корм для кошек FELIX, желе с форелью, 85 г",
           dateFrom: "с 01 сентября",
           dateTo: "до 07 сентября",
@@ -58,7 +63,10 @@ export default {
         },
         {
           id: 1,
-          type: "Скидки на каждой полке",
+          discountName: "Скидки на каждой полке",
+          discountType: "every",
+          productType: "animals",
+          shopType: "super",
           name: "Корм для кошек WHISKAS, влажный паштет, индейка/кролик, 75 г",
           dateFrom: "с 26 сентября",
           dateTo: "до 02 ноября",
@@ -69,20 +77,21 @@ export default {
         },
         {
           id: 2,
-          type: "Скидки на каждой полке",
-          name: "Напиток",
+          discountName: "Скидки на каждой полке",
+          discountType: "every",
+          productType: "milk",
+          shopType: "super",
+          name: "Напиток кисломолочный ACTIMEL, детский, клубника/банан, 2,5 %, 100 г",
           dateFrom: "с 26 сентября",
           dateTo: "до 02 ноября",
           old: 600,
           new: 50,
           discount: 20,
           img: "https://magnit.ru/upload/iblock/3d5/3d53f490e7a4a342812289cc9cf96410.jpg",
-        }
-      ]
+        },
+      ],
+      filteredProducts: [],
     }
-  },
-  mounted() {
-    this.sortBy(this.sort);
   },
   methods: {
     sortBy(type) {
@@ -132,10 +141,46 @@ export default {
           });
           break;
       }
-    }
-  }
-}
+    },
+    filterBy(filters) {
+      if (filters.length) {
+        const shopFilters = filters.filter(item => item.type === 'shop').map(item => item.value);
+        const productFilters = filters.filter(item => item.type === 'product').map(item => item.value);
+        const discountFilters = filters.filter(item => item.type === 'discount').map(item => item.value);
 
+        if (shopFilters.length) {
+          this.filteredProducts = this.products.filter(product => shopFilters.includes(product.shopType))
+          if (productFilters.length) {
+            this.filteredProducts = this.filteredProducts.filter(product => productFilters.includes(product.productType))
+          }
+          if (discountFilters.length) {
+            this.filteredProducts = this.filteredProducts.filter(product => discountFilters.includes(product.discountType))
+          }
+        } else if (productFilters.length) {
+          this.filteredProducts = this.products.filter(product => productFilters.includes(product.productType))
+          if (discountFilters.length) {
+            this.filteredProducts = this.filteredProducts.filter(product => discountFilters.includes(product.discountType))
+          }
+        } else if (discountFilters.length) {
+          this.filteredProducts = this.products.filter(product => discountFilters.includes(product.discountType))
+        }
+
+      } else {
+        this.filteredProducts = this.products;
+      }
+    }
+  },
+  mounted() {
+    let _this = this;
+
+    this.sortBy(this.sort);
+    this.filterBy([]);
+
+    eventBus.$on('filterSelect', function (val) {
+      _this.filterBy(val);
+    });
+  },
+}
 </script>
 
 <style lang="scss" scoped>
