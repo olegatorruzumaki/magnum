@@ -1,9 +1,7 @@
 <template>
   <div class="hat">
     <div class="hat__title">Акции и спецпредложения</div>
-    <div class="hat__descrption">Магазины Магнит работают для вас в обычном режиме. С 14:00 до 14:30 проводится
-      санитарная обработка торговых залов
-    </div>
+    <div class="hat__description mb-5">Магазины Магнум работают для вас в обычном режиме.</div>
   </div>
 </template>
 

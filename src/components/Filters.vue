@@ -1,8 +1,6 @@
 <template>
   <div class="filters">
-    <div> Фильтры:
-      <hr class="hr">
-    </div>
+    <div class="filters__hat"> Фильтры:</div>
     <div class="filters__types">
       <div class="filters__type mb-4" :key="filter.id" v-for="filter in filters">
         <div class="filters__name">{{ filter.name }}</div>
@@ -25,7 +23,7 @@ export default {
   data() {
     return {
       selectedFilters: [],
-      filters: [
+      filters: [  // все данные под бек*
         {
           name: "Формат магазина",
           id: 1,
@@ -84,6 +82,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.filters__hat {
+  line-height: 50px;
+  border-bottom: 1px solid #dcdde0;
+}
+
 .filters__name {
   padding: 12px 48px 12px 0;
   font-weight: bold;
