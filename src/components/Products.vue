@@ -1,10 +1,10 @@
 <template>
-  <div class="products col-12">
-    <div class="row products__hat">
+  <div class="products">
+    <div class="products__hat col-12">
       <div class="space-between px-0">
-        <div>Найдено {{ products.length }} акций</div>
+        <div class="d-none d-md-block">Найдено {{ products.length }} акций</div>
         <div>
-          <label>
+          <label class="products__select">
             <select class="border-0" name="sort" v-model="sort" @change="sortBy(sort)">
               <option value="dateToHigh">Новизна: по возрастанию</option>
               <option value="dateToLow">Новизна: по убыванию</option>
@@ -15,22 +15,29 @@
             </select>
           </label>
         </div>
+        <div class="d-md-none products__filter-button" v-b-modal.modal-filter>Фильтр</div>
+        <b-modal static id="modal-filter" hide-footer hide-header>
+          <Filters class="row"></Filters>
+        </b-modal>
       </div>
     </div>
-    <div class="row">
-      <div class="products__item col-3" :key="product.id" v-for="product in filteredProducts[page-1]">
-        <div class="products__type">{{ product.discountName }}</div>
-        <div class="products__img mb-4">
+    <div class="products__item col-12 col-md-3" :key="product.id" v-for="product in filteredProducts[page-1]">
+      <div class="row">
+        <div class="products__type col-12 d-none d-md-block">{{ product.discountName }}</div>
+        <div class="products__img col-4 col-md-12 mb-md-4">
           <div class="products__discount">-{{ product.discount }}%</div>
-          <img class="mh-100" :src="product.img" alt="#">
+          <img class="mh-100 mw-100" :src="product.img" alt="#">
           <div class="products__old">{{ product.old }}</div>
           <div class="products__new">{{ product.new }}</div>
         </div>
-        <div class="products__name">{{ product.name }}</div>
-        <div class="products__footer">
-          <div class="products__date">
-            <div>{{ product.dateFrom }}</div>
-            <div>{{ product.dateTo }}</div>
+        <div class="col-8 col-md-12">
+          <div class="products__type d-md-none">{{ product.discountName }}</div>
+          <div class="products__name">{{ product.name }}</div>
+          <div class="products__footer mt-4">
+            <div class="products__date">
+              <div>{{ product.dateFrom }}</div>
+              <div>{{ product.dateTo }}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -44,9 +51,11 @@
 
 <script>
 import {eventBus} from "@/main";
+import Filters from '@/components/Filters'
 
 export default {
   name: 'Products',
+  components: {Filters},
   props: {},
   data() {
     return {
@@ -393,6 +402,7 @@ export default {
         },
       ],
       filteredProducts: [],
+      selectedFilters: [],
     }
   },
   methods: {
@@ -465,9 +475,21 @@ export default {
           });
           break;
       }
+      this.breakForPages(this.products);
+      this.filterBy(this.selectedFilters);
+    },
+    breakForPages(array) {
+      let size = 16;
+      let filtered = [];
+      console.log(array);
+
+      for (let i = 0; i < Math.ceil(array.length / size); i++) {
+        filtered[i] = array.slice((i * size), (i * size) + size);
+      }
+      this.filteredProducts = filtered;
+      console.log(array);
     },
     filterBy(filters) {
-      let size = 16;
       if (filters.length) {
         const shopFilters = filters.filter(item => item.type === 'shop').map(item => item.value);
         const productFilters = filters.filter(item => item.type === 'product').map(item => item.value);
@@ -491,19 +513,9 @@ export default {
         } else if (discountFilters.length) {
           this.filteredProducts = this.products.filter(product => discountFilters.includes(product.discountType))
         }
-        let filtered = [];
-
-        for (let i = 0; i < Math.ceil(this.filteredProducts.length / size); i++) {
-          filtered[i] = this.filteredProducts.slice((i * size), (i * size) + size);
-        }
-        this.filteredProducts = filtered;
+        this.breakForPages(this.filteredProducts);
       } else {
-        let filtered = [];
-
-        for (let i = 0; i < Math.ceil(this.products.length / size); i++) {
-          filtered[i] = this.products.slice((i * size), (i * size) + size);
-        }
-        this.filteredProducts = filtered;
+        this.breakForPages(this.products);
       }
       this.page = 1;
     }
@@ -513,21 +525,25 @@ export default {
     this.filterBy([]);
 
     eventBus.$on('filterSelect', (val) => {
-      this.filterBy(val);
+      this.selectedFilters = val;
+      this.filterBy(this.selectedFilters);
     });
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.products__hat {
-  line-height: 50px;
-}
-
 .products__item {
   position: relative;
   padding: 16px 24px 66px;
   border-top: 1px solid #dcdde0;
+  @media (max-width: 768px) {
+    padding: 16px;
+
+    &:nth-child(2) {
+      border-top: none;
+    }
+  }
 }
 
 .products__type {
@@ -537,6 +553,9 @@ export default {
   font-family: Montserrat-semibold, Arial, sans-serif;
   font-weight: 400;
   color: #000;
+  @media (max-width: 768px) {
+    color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 .products__name {
@@ -545,7 +564,10 @@ export default {
 
 .products__img {
   position: relative;
-  height: 200px;
+  max-height: 200px;
+  @media (max-width: 768px) {
+    padding: 20px 0 28px;
+  }
 }
 
 .products__discount {
@@ -564,7 +586,7 @@ export default {
   bottom: 48px;
   right: 0;
   padding: 0 4px;
-  min-height: 20px;
+  font-size: 20px;
   border-radius: 12px;
   background: #fff;
 
@@ -575,6 +597,11 @@ export default {
     left: 0;
     right: 0;
     border-bottom: 1px solid #e6000e;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    bottom: 30px;
   }
 }
 
@@ -587,13 +614,18 @@ export default {
   background: #ffd500;
   padding: 0 16px;
   border-radius: 26px 0 26px 0;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 }
 
 .products__footer {
-  position: absolute;
-  left: 24px;
-  right: 24px;
-  bottom: 16px;
+  @media (min-width: 768px) {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 16px;
+  }
 }
 
 .products__date {
@@ -601,5 +633,39 @@ export default {
   font-size: 12px;
   font-weight: 500;
   color: rgba(0, 0, 0, .5);
+}
+
+.products__select {
+  @media (max-width: 768px) {
+    padding: 0 12px;
+    background: #f5f7fa;
+    border-radius: 12px;
+  }
+
+  select {
+    @media (max-width: 768px) {
+      background: inherit;
+      height: 40px;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+.products__hat {
+  line-height: 50px;
+
+  @media (max-width: 768px) {
+    line-height: 40px;
+  }
+}
+
+.products__filter-button {
+  padding: 0 12px;
+  background: #f5f7fa;
+  border-radius: 12px;
+  cursor: pointer;
 }
 </style>

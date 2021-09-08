@@ -1,13 +1,13 @@
 <template>
-  <div class="promo col-12">
-    <Hat></Hat>
-    <div class="row">
-      <div class="col-3">
-        <Filters></Filters>
-      </div>
-      <div class="col-9">
-        <Products class="row"></Products>
-      </div>
+  <div class="promo">
+    <div class="col-12">
+      <Hat class="row"></Hat>
+    </div>
+    <div class="col-12 col-md-3 d-none d-md-block">
+      <Filters class="row"></Filters>
+    </div>
+    <div class="col-12 col-md-9">
+      <Products class="row"></Products>
     </div>
   </div>
 </template>

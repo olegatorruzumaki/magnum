@@ -19,3 +19,23 @@
 .page-item {
   cursor: pointer;
 }
+
+.modal-dialog {
+  margin: 0;
+  height: 100%;
+}
+
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+.ml-3 {
+  margin-left: 1rem !important;
+}
+
+.flex-vertical-center {
+  display: flex;
+  align-items: center;
+}

@@ -1,7 +1,7 @@
 <template>
   <div class="hat">
-    <div class="hat__title">Акции и спецпредложения</div>
-    <div class="hat__description mb-5">Магазины Магнум работают для вас в обычном режиме.</div>
+    <div class="hat__title col-12 mb-4">Акции и спецпредложения</div>
+    <div class="hat__description col-12 mb-5">Магазины Магнум работают для вас в обычном режиме.</div>
   </div>
 </template>
 
@@ -21,7 +21,8 @@ export default {
 
 <style lang="scss" scoped>
 .hat__title {
-  font-size: 40px;
+  font-size: 33px;
+  line-height: 33px;
   font-weight: bold;
 }
 
