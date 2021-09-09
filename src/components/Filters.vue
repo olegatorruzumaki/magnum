@@ -39,8 +39,13 @@
             <label class="form-check-label ml-3" :for="'mobile-' + filter.id">{{ filter.name }}</label>
           </div>
         </div>
-        <div v-if="Object.keys(selectedFilters).length !== 0" class="text-center filters__remove-filters"
-             @click="clearFilters">Сбросить фильтры
+        <div class="filters__buttons">
+          <div v-if="Object.keys(selectedFilters).length !== 0" class="text-center filters__remove-filters"
+               @click="clearFilters">Сбросить фильтры
+          </div>
+          <div @click="$bvModal.hide('modal-filter')" class="text-center filters__accept-filters" type="button">
+            Применить фильтры
+          </div>
         </div>
       </div>
     </div>
@@ -153,15 +158,38 @@ export default {
   }
 }
 
-.filters__remove-filters {
-  position: absolute;
-  bottom: 48px;
-  width: calc(100% - 33px);
-  background: #f5f7fa;
+.filters__types {
+  @media(max-width: 768px) {
+    padding-bottom: 150px;
+  }
+}
+
+.filters__accept-filters, .filters__remove-filters {
   padding: 12px 16px;
   border-radius: 12px;
   font-size: 16px;
   line-height: 24px;
   cursor: pointer;
+}
+
+.filters__buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px 16px 24px;
+  background: linear-gradient(0deg, white 80%, transparent 100%);
+}
+
+.filters__accept-filters {
+  background: #e6000e;
+  color: white;
+  bottom: 48px;
+}
+
+.filters__remove-filters {
+  background: #f5f7fa;
+  bottom: 112px;
+  margin-bottom: 16px;
 }
 </style>

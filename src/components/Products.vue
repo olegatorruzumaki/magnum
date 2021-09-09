@@ -75,7 +75,7 @@ export default {
           new: 140,
           date: 1631042524, //epoch date
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/928/928643fcbbfc275a22d3484654780a2f.jpg",
+          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
         },
         {
           id: 1,
@@ -117,7 +117,7 @@ export default {
           old: 250,
           new: 150,
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/928/928643fcbbfc275a22d3484654780a2f.jpg",
+          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
         },
         {
           id: 4,
@@ -159,7 +159,7 @@ export default {
           old: 250,
           new: 120,
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/928/928643fcbbfc275a22d3484654780a2f.jpg",
+          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
         },
         {
           id: 7,
@@ -201,7 +201,7 @@ export default {
           old: 250,
           new: 444,
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/928/928643fcbbfc275a22d3484654780a2f.jpg",
+          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
         },
         {
           id: 10,
@@ -244,7 +244,7 @@ export default {
           new: 140,
           date: 1631042524, //epoch date
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/928/928643fcbbfc275a22d3484654780a2f.jpg",
+          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
         },
         {
           id: 13,
@@ -286,7 +286,7 @@ export default {
           old: 250,
           new: 150,
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/928/928643fcbbfc275a22d3484654780a2f.jpg",
+          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
         },
         {
           id: 16,
@@ -328,7 +328,7 @@ export default {
           old: 250,
           new: 120,
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/928/928643fcbbfc275a22d3484654780a2f.jpg",
+          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
         },
         {
           id: 19,
@@ -370,7 +370,7 @@ export default {
           old: 250,
           new: 444,
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/928/928643fcbbfc275a22d3484654780a2f.jpg",
+          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
         },
         {
           id: 22,
@@ -481,13 +481,11 @@ export default {
     breakForPages(array) {
       let size = 16;
       let filtered = [];
-      console.log(array);
 
       for (let i = 0; i < Math.ceil(array.length / size); i++) {
         filtered[i] = array.slice((i * size), (i * size) + size);
       }
       this.filteredProducts = filtered;
-      console.log(array);
     },
     filterBy(filters) {
       if (filters.length) {
