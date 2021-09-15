@@ -593,6 +593,7 @@ export default {
 
 .products__img {
   position: relative;
+  overflow: hidden;
   max-height: 200px;
   @media (max-width: 768px) {
     padding: 20px 0 28px;

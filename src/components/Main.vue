@@ -1,6 +1,6 @@
 <template>
   <div class="promo">
-    <div class="col-12">
+    <div class="col-12 mt-4">
       <Hat class="row"></Hat>
     </div>
     <div class="col-12 col-md-3 d-none d-md-block">
