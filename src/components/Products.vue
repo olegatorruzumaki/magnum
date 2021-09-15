@@ -2,7 +2,7 @@
   <div class="products">
     <div class="products__hat col-12">
       <div class="space-between px-0 mb-3 mb-md-1">
-        <div class="d-none d-md-block">Найдено {{ products.length }} акций</div>
+        <div class="d-none d-md-block">Найдено {{ filteredLength }} акций</div>
         <label class="products__select">
           <select class="border-0" name="sort" v-model="sort" @change="sortBy(sort)">
             <option value="dateToHigh">Новизна: по возрастанию</option>
@@ -405,6 +405,7 @@ export default {
         },
       ],
       filteredProducts: [],
+      filteredLength: '',
       selectedFilters: [],
     }
   },
@@ -489,6 +490,7 @@ export default {
         filtered[i] = array.slice((i * size), (i * size) + size);
       }
       this.filteredProducts = filtered;
+      this.filteredLength = this.filteredProducts.flat().length;
     },
     filterBy(filters) {
       if (filters.length) {

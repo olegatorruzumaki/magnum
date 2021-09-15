@@ -1,7 +1,10 @@
 <template>
   <div class="filters row">
     <div class="col-12 d-none d-md-block">
-      <div class="filters__hat pb-3 pb-md-1"> Фильтры:</div>
+      <div class="filters__hat pb-3 pb-md-1 d-flex justify-content-between">
+        <div>Фильтры:</div>
+        <div class="filters__clearFilter" v-if="selectedFilters.length" @click="clearFilters">Сбросить</div>
+      </div>
       <div class="filters__types">
         <div class="filters__type" :key="filterKey + filter.id" v-for="(filter, index) in filters">
           <div class="filters__name mb-2 mt-4">{{ filter.name }}</div>
@@ -287,5 +290,11 @@ export default {
   cursor: pointer;
   color: #b70050;
   padding: 14px 16px 14px 0;
+}
+
+.filters__clearFilter {
+  color: #b70050;
+  cursor: pointer;
+  text-decoration: underline;
 }
 </style>
