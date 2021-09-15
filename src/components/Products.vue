@@ -1,5 +1,5 @@
 <template>
-  <div class="products">
+  <div class="products" id="products">
     <div class="products__hat col-12">
       <div class="space-between px-0 mb-3 mb-md-1">
         <div class="d-none d-md-block">Найдено {{ filteredLength }} акций</div>
@@ -47,7 +47,7 @@
     </div>
     <div class="row">
       <pagination class="mt-3" v-model="page" :per-page="16" :options="{texts: {count: ''}}"
-                  :records="[].concat.apply([], this.filteredProducts).length"/>
+                  :records="[].concat.apply([], this.filteredProducts).length" @paginate="changePage"/>
     </div>
   </div>
 </template>
@@ -410,6 +410,9 @@ export default {
     }
   },
   methods: {
+    changePage() {
+      document.getElementById('products').scrollIntoView();
+    },
     sortBy(type) {
       switch (type) {
         case "priceToHigh":
