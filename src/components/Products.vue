@@ -1,49 +1,52 @@
 <template>
   <div class="products">
     <div class="products__hat col-12">
-      <div class="space-between px-0">
+      <div class="space-between px-0 mb-3 mb-md-1">
         <div class="d-none d-md-block">Найдено {{ products.length }} акций</div>
-        <div>
-          <label class="products__select">
-            <select class="border-0" name="sort" v-model="sort" @change="sortBy(sort)">
-              <option value="dateToHigh">Новизна: по возрастанию</option>
-              <option value="dateToLow">Новизна: по убыванию</option>
-              <option value="priceToHigh">Цена: по возрастанию</option>
-              <option value="priceToLow">Цена: по убыванию</option>
-              <option value="discountToHigh">Скидка: по возрастанию</option>
-              <option value="discountToLow">Скидка: по убыванию</option>
-            </select>
-          </label>
-        </div>
+        <label class="products__select">
+          <select class="border-0" name="sort" v-model="sort" @change="sortBy(sort)">
+            <option value="dateToHigh">Новизна: по возрастанию</option>
+            <option value="dateToLow">Новизна: по убыванию</option>
+            <option value="priceToHigh">Цена: по возрастанию</option>
+            <option value="priceToLow">Цена: по убыванию</option>
+            <option value="discountToHigh">Скидка: по возрастанию</option>
+            <option value="discountToLow">Скидка: по убыванию</option>
+          </select>
+        </label>
         <div class="d-md-none products__filter-button" v-b-modal.modal-filter>Фильтр</div>
         <b-modal static id="modal-filter" hide-footer hide-header>
           <Filters class="row"></Filters>
         </b-modal>
       </div>
     </div>
-    <div class="products__item col-12 col-md-3" :key="product.id" v-for="product in filteredProducts[page-1]">
-      <div class="row">
-        <div class="products__type col-12 d-none d-md-block">{{ product.discountName }}</div>
-        <div class="products__img col-4 col-md-12 mb-md-4">
-          <div class="products__discount">-{{ product.discount }}%</div>
-          <img class="mh-100 mw-100" :src="product.img" alt="#">
-          <div class="products__old">{{ product.old }}</div>
-          <div class="products__new">{{ product.new }}</div>
-        </div>
-        <div class="col-8 col-md-12">
-          <div class="products__type d-md-none">{{ product.discountName }}</div>
-          <div class="products__name">{{ product.name }}</div>
-          <div class="products__footer mt-4">
-            <div class="products__date">
-              <div>{{ product.dateFrom }}</div>
-              <div>{{ product.dateTo }}</div>
+    <div class="col-12">
+      <div class="row products__items">
+        <div class="products__item col-12 col-sm-6 col-md-4 col-lg-3" :key="product.id"
+             v-for="product in filteredProducts[page-1]">
+          <div class="row">
+            <div class="products__type col-12 d-none d-md-block">{{ product.discountName }}</div>
+            <div class="products__img col-4 col-md-12 mb-md-4">
+              <img class="mh-100 mw-100" :src="product.img" alt="#">
+              <div class="products__discount">-{{ product.discount }}%</div>
+              <div class="products__old">{{ product.old }}</div>
+              <div class="products__new">{{ product.new }}</div>
+            </div>
+            <div class="col-8 col-md-12">
+              <div class="products__type d-md-none">{{ product.discountName }}</div>
+              <div class="products__name">{{ product.name }}</div>
+              <div class="products__footer mt-4">
+                <div class="products__date">
+                  <div>{{ product.dateFrom }}</div>
+                  <div>{{ product.dateTo }}</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="row">
-      <pagination v-model="page" :per-page="16" :options="{texts: {count: ''}}"
+      <pagination class="mt-3" v-model="page" :per-page="16" :options="{texts: {count: ''}}"
                   :records="[].concat.apply([], this.filteredProducts).length"/>
     </div>
   </div>
@@ -535,11 +538,40 @@ export default {
   position: relative;
   padding: 16px 24px 66px;
   border-top: 1px solid #dcdde0;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  cursor: pointer;
+
+  img {
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+  }
+
   @media (max-width: 768px) {
     padding: 16px;
 
-    &:nth-child(2) {
+    &:first-child {
       border-top: none;
+    }
+  }
+
+  &:hover {
+    border-left: 1px solid #dcdde0;
+    border-right: 1px solid #dcdde0;
+
+    img {
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }
+  }
+
+  &:nth-last-child(-n+4) {
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid #dcdde0;
     }
   }
 }
@@ -548,8 +580,7 @@ export default {
   margin-bottom: 8px;
   height: 40px;
   font-size: 14px;
-  font-family: Montserrat-semibold, Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   color: #000;
   @media (max-width: 768px) {
     color: rgba(0, 0, 0, 0.5);
@@ -572,7 +603,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  background: #e6000e;
+  background: #b70050;
   padding: 0 8px;
   line-height: 24px;
   border-radius: 12px 0 12px 0;
@@ -594,7 +625,7 @@ export default {
     top: 50%;
     left: 0;
     right: 0;
-    border-bottom: 1px solid #e6000e;
+    border-bottom: 1px solid #b70050;
   }
 
   @media (max-width: 768px) {

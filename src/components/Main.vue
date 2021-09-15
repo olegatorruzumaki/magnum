@@ -32,4 +32,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.promo {
+  border-bottom: 1px solid #dcdde0;
+  margin-bottom: 25px;
+}
 </style>
