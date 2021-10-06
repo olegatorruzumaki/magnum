@@ -78,7 +78,7 @@ export default {
           new: 140,
           date: 1631042524, //epoch date
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 1,
@@ -92,7 +92,7 @@ export default {
           old: 200,
           new: 150,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/784/784c4c486e037af8cbd523bdd0691b31.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 2,
@@ -106,7 +106,7 @@ export default {
           old: 600,
           new: 50,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/3d5/3d53f490e7a4a342812289cc9cf96410.jpg",
+          img: "https://sun9-17.userapi.com/impg/UEWaXCxbeKIvMap1jWIM5u80YXooTmRIpfQ-gA/TJAZQAA3mb4.jpg?size=800x800&quality=96&sign=841abcabaf19334140b2e6c7c5adc3eb&type=album",
         },
         {
           id: 3,
@@ -120,7 +120,7 @@ export default {
           old: 250,
           new: 150,
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 4,
@@ -134,7 +134,7 @@ export default {
           old: 200,
           new: 160,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/784/784c4c486e037af8cbd523bdd0691b31.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 5,
@@ -148,7 +148,7 @@ export default {
           old: 600,
           new: 55,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/3d5/3d53f490e7a4a342812289cc9cf96410.jpg",
+          img: "https://sun9-17.userapi.com/impg/UEWaXCxbeKIvMap1jWIM5u80YXooTmRIpfQ-gA/TJAZQAA3mb4.jpg?size=800x800&quality=96&sign=841abcabaf19334140b2e6c7c5adc3eb&type=album",
         },
         {
           id: 6,
@@ -162,7 +162,7 @@ export default {
           old: 250,
           new: 120,
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 7,
@@ -176,7 +176,7 @@ export default {
           old: 200,
           new: 190,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/784/784c4c486e037af8cbd523bdd0691b31.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 8,
@@ -190,7 +190,7 @@ export default {
           old: 600,
           new: 555,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/3d5/3d53f490e7a4a342812289cc9cf96410.jpg",
+          img: "https://sun9-17.userapi.com/impg/UEWaXCxbeKIvMap1jWIM5u80YXooTmRIpfQ-gA/TJAZQAA3mb4.jpg?size=800x800&quality=96&sign=841abcabaf19334140b2e6c7c5adc3eb&type=album",
         },
         {
           id: 9,
@@ -204,7 +204,7 @@ export default {
           old: 250,
           new: 444,
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 10,
@@ -218,7 +218,7 @@ export default {
           old: 200,
           new: 1520,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/784/784c4c486e037af8cbd523bdd0691b31.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 11,
@@ -232,7 +232,7 @@ export default {
           old: 600,
           new: 510,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/3d5/3d53f490e7a4a342812289cc9cf96410.jpg",
+          img: "https://sun9-17.userapi.com/impg/UEWaXCxbeKIvMap1jWIM5u80YXooTmRIpfQ-gA/TJAZQAA3mb4.jpg?size=800x800&quality=96&sign=841abcabaf19334140b2e6c7c5adc3eb&type=album",
         },
         {
           id: 12,
@@ -247,7 +247,7 @@ export default {
           new: 140,
           date: 1631042524, //epoch date
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 13,
@@ -261,7 +261,7 @@ export default {
           old: 200,
           new: 150,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/784/784c4c486e037af8cbd523bdd0691b31.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 14,
@@ -275,7 +275,7 @@ export default {
           old: 600,
           new: 50,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/3d5/3d53f490e7a4a342812289cc9cf96410.jpg",
+          img: "https://sun9-17.userapi.com/impg/UEWaXCxbeKIvMap1jWIM5u80YXooTmRIpfQ-gA/TJAZQAA3mb4.jpg?size=800x800&quality=96&sign=841abcabaf19334140b2e6c7c5adc3eb&type=album",
         },
         {
           id: 15,
@@ -289,7 +289,7 @@ export default {
           old: 250,
           new: 150,
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 16,
@@ -303,7 +303,7 @@ export default {
           old: 200,
           new: 160,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/784/784c4c486e037af8cbd523bdd0691b31.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 17,
@@ -317,7 +317,7 @@ export default {
           old: 600,
           new: 55,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/3d5/3d53f490e7a4a342812289cc9cf96410.jpg",
+          img: "https://sun9-17.userapi.com/impg/UEWaXCxbeKIvMap1jWIM5u80YXooTmRIpfQ-gA/TJAZQAA3mb4.jpg?size=800x800&quality=96&sign=841abcabaf19334140b2e6c7c5adc3eb&type=album",
         },
         {
           id: 18,
@@ -331,7 +331,7 @@ export default {
           old: 250,
           new: 120,
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 19,
@@ -345,7 +345,7 @@ export default {
           old: 200,
           new: 190,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/784/784c4c486e037af8cbd523bdd0691b31.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 20,
@@ -359,7 +359,7 @@ export default {
           old: 600,
           new: 555,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/3d5/3d53f490e7a4a342812289cc9cf96410.jpg",
+          img: "https://sun9-17.userapi.com/impg/UEWaXCxbeKIvMap1jWIM5u80YXooTmRIpfQ-gA/TJAZQAA3mb4.jpg?size=800x800&quality=96&sign=841abcabaf19334140b2e6c7c5adc3eb&type=album",
         },
         {
           id: 21,
@@ -373,7 +373,7 @@ export default {
           old: 250,
           new: 444,
           discount: 42,
-          img: "https://magnit.ru/upload/iblock/eb4/eb4ac1b0384154c8a91aef0aa630b14b.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 22,
@@ -387,7 +387,7 @@ export default {
           old: 200,
           new: 1520,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/784/784c4c486e037af8cbd523bdd0691b31.jpg",
+          img: "https://sun9-8.userapi.com/impg/e5u35XyWk8faOScGnZlh2nTWcZ4W3jk8jIK9rQ/PdY7_wX2YTA.jpg?size=800x800&quality=96&sign=136dda9515a4d2b4ee76e780f5a31153&type=album",
         },
         {
           id: 23,
@@ -401,7 +401,7 @@ export default {
           old: 600,
           new: 510,
           discount: 20,
-          img: "https://magnit.ru/upload/iblock/3d5/3d53f490e7a4a342812289cc9cf96410.jpg",
+          img: "https://sun9-17.userapi.com/impg/UEWaXCxbeKIvMap1jWIM5u80YXooTmRIpfQ-gA/TJAZQAA3mb4.jpg?size=800x800&quality=96&sign=841abcabaf19334140b2e6c7c5adc3eb&type=album",
         },
       ],
       filteredProducts: [],
